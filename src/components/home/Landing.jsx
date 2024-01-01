@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import getCoins from "@/lib/getCoins";
 import Search from "../ui/Search";
 import { useAppContext } from "@/context/Wrapper";
+import Image from "next/image";
 
 const Landing = () => {
   const [filteredCoins, setFilteredCoins] = useState([]);
@@ -35,10 +36,13 @@ const Landing = () => {
   return (
     <div className="relative w-full h-full">
       <div className="relative w-full h-screen m-0 p-0">
-        <img
+        <Image
           src="/img/pattern.jpg"
           alt=""
-          className="absolute top-0 left-0 brightness-50 w-full h-full object-cover"
+          objectFit="cover"
+          layout="fill"
+          priority
+          className="absolute top-0 left-0 brightness-50"
         />
       </div>
       <div className="w-full h-screen absolute top-0 left-0 flex items-center justify-center">
@@ -111,7 +115,7 @@ const Landing = () => {
           <div className="w-full h-24 absolute bottom-0 left-0 px-8 flex items-center justify-between">
             <div className="w-1/2 h-full flex items-center justify-start">
               <a
-                href=""
+                href="https://github.com/yusufsezgn/ethereal"
                 className="text-white underline font-medium hover:no-underline transition-all"
               >
                 {language === "TR" ? "Kaynak kod" : "Source of data"}
